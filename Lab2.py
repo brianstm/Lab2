@@ -36,6 +36,16 @@ def calc_min_max(l):
     print("The largest is: ", largest)
     print("The smallest is: ", smallest)
 
+def calc_median(l):
+    l_s = l.sort()
+    if len(l) % 2 != 0:
+        median = int((len(l) + 1) / 2 - 1)
+        return l[median]
+    else:
+        median1 = int(len(l) / 2 - 1)
+        median2 = int(len(l) / 2)
+        return (l[median1] + l[median2]) / 2
+
 
 def main():
     print("ET0735 (DevOps for AIoT) - Lab 2 - Introduction to Python")
@@ -43,6 +53,7 @@ def main():
     num_list = get_user_input()
     calc_average(num_list)
     calc_min_max(num_list)
+    print("The median is: ", calc_median(num_list))
 
 
 if __name__ == "__main__":
